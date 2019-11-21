@@ -9,23 +9,25 @@
 |password|string|null: false|
 
 ### Association
-- has_many :groups, through: :groups_users
-- belongs_to :member
+- has_many :groups, through: :messages
+- has_many :messages
+- has_many :members
 
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 
 ### Association
-- has_many :users, through: :groups_users
-- belongs_to :member
+- has_many :users, through: :messages
+- has_many :messages
+- has_many :members
 
 
-## groups_usersテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -44,8 +46,8 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :users
-- has_many :groups
+- belongs_to :user
+- belongs_to :group
 
 <!-- 
 This README would normally document whatever steps are necessary to get the
