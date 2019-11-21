@@ -9,7 +9,7 @@
 |password|string|null: false|
 
 ### Association
-- has_many :groups, through: :messages
+- has_many :groups, through: :members
 - has_many :messages
 - has_many :members
 
@@ -18,11 +18,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
 
 
 ### Association
-- has_many :users, through: :messages
+- has_many :users, through: :members
 - has_many :messages
 - has_many :members
 
