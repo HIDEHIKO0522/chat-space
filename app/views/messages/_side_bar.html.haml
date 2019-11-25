@@ -2,7 +2,7 @@
   .side_bar__header
     .side_bar__header__name_box
       .side_bar__header__name_box__user_name
-        aki
+         = current_user.name
       .side_bar__header__name_box__menu
         =link_to "#", class: "side_bar__btn side_bar__btn__" do
           <i class="fas fa-edit"></i>
