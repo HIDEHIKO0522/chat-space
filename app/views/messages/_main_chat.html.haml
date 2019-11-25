@@ -1,0 +1,31 @@
+.main_chat
+  .main_chat__main_header
+    .main_chat__main_header__left_box
+      .main_chat__main_header__left_box__current_group
+        aki_groups
+      .main_chat__main_header__left_box__member_list
+        Member: aki
+    .main_chat__main_header__edit_btn
+      Edit
+  
+  .main_chat__massages
+    .main_chat__messages__message_tweeter
+      .main_chat__messages__message_tweeter__user_name
+        aki
+      .main_chat__messages__message_tweeter__created_date
+        2019/11/25/18:00
+    .main_chat__messages__text
+      こんにちは！ 
+
+  .main_chat__form
+    .main_chat__form__new_message
+      .main_chat__form__new_message__input_box
+        %placeholder: type a message
+        .main_chat__form__new_message__input_box__image
+          %input#filename{:type => "file"}/
+          %label{:for => "filename"}
+            %span.image
+              %i.far.fa-image
+            %input#filename{:type => "file"}/
+      .main_chat__form__new_message__send_btn
+        Send       
