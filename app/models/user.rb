@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :groups, through: :members
   has_many :members  # members は groups_usersと同義 
-  # has_many :messages
+  has_many :messages
 end
