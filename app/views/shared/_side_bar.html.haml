@@ -9,10 +9,10 @@
         =link_to edit_user_path(current_user), class: "side_bar__btn side_bar__btn__" do
           %i.fas.fa-cog
   .side_bar__groups
-  - current_user.groups.each do |group|
-    .side_bar_groups__group_box 
-      = link_to group_messages_path(group) do
-        .side_bar__groups__group_box__name_box
-          = group.name
-        .side_bar__groups__group_box__message_box
-          メッセージはまだありません。
+    - current_user.groups.each do |group|
+      .side_bar_groups__group_box
+        = link_to group_messages_path(group) do
+          .side_bar__groups__group_box__name_box
+            = group.name
+          .side_bar__groups__group_box__message_box
+            メッセージはまだありません。
