@@ -2,11 +2,15 @@
   .main_chat__main_header
     .main_chat__main_header__left_box
       .main_chat__main_header__left_box__current_group
-        aki
-      .main_chat__main_header__left_box__member_list    
-        Members:
+        = link_to group_messages_path(@group) do
+          = @group.name
+      .main_chat__main_header__left_box__member_list
+        Members: 
+        - @group.users.each do |user|   
+          = user.name
     .main_chat__main_header__edit_btn
-      Edit
+      = link_to "Edit", edit_group_path(@group), class: 'btn'
+      
   .main_chat__massages
     = render @messages
  
