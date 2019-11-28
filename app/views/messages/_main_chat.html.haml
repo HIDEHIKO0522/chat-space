@@ -1,0 +1,25 @@
+.main_chat
+  .main_chat__main_header
+    .main_chat__main_header__left_box
+      .main_chat__main_header__left_box__current_group
+        aki
+      .main_chat__main_header__left_box__member_list    
+        Members:
+    .main_chat__main_header__edit_btn
+      Edit
+  .main_chat__massages
+    = render @messages
+ 
+  .main_chat__form
+    = form_for [@group, @message] do |f|
+      .main_chat__form__input_box
+        .main_chat__form__input_box__new_message
+          = f.text_field :text, class: 'main_chat__form__input_box', placeholder: 'Type a message'
+        .main_chat__form__input_box__image
+          %input#filename{:type => "file"}/
+          %label{:for => "filename"}
+            %span.image
+              %i.far.fa-image
+                %input#filename{:type => "file"}/
+      .main_chat__form__send_btn
+        = f.submit 'Send', class: 'main_chat__form__send_btn'
