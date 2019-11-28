@@ -176,6 +176,7 @@
 
     &__form {
       height: 50px;
+      width: calc(100vw - 300px);
       background-color:#ddd;
       padding-top: 20px;
       padding-left: 40px;
@@ -188,9 +189,9 @@
         bottom: 0px;
  
         &__input_box {
-          width: calc(100vw - 300px - 190px);
+          width: calc(100vw - 300px - 210px);
           background-color:#fff;
-          color: #434A54;
+          color: #000;
           font-size: 16px;
           padding-left: 10px;
           padding-right: 10px;
@@ -201,13 +202,12 @@
 
             &__new_message {
               height: 50px;
-              // width: calc(100vw - 300px - 190px);
+              width: calc(100% - 300px);
               background-color:#fff;
-              color: #434A54;
+              color: #000;
               font-size: 16px;
               border: solid 0px;
               line-height: 50px;
-
             }
             &__image {
               @media screen { #filename { display: none; } }
@@ -217,12 +217,11 @@
               text-decoration: none;
               text-align: center;
               line-height: 50px;
-              float: right;
             }
-        }    
+        }  
         &__send_btn {
           height: 50px;
-          width: 100px;
+          width: 90px;
           background-color: #38AEF0;
           color: #fff;
           text-align: center;
