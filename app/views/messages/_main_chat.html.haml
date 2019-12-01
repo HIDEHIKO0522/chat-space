@@ -1,29 +1,28 @@
 .main_chat
   .main_chat__main_header
     .main_chat__main_header__left_box
-      .main_chat__main_header__left_box__current_group
+      .main_chat__main_header__left_box__group_name
         = link_to group_messages_path(@group) do
-          = @group.name
+          %p= @group.name
       .main_chat__main_header__left_box__member_list
         Members: 
         - @group.users.each do |user|   
           = user.name
     .main_chat__main_header__edit_btn
-      = link_to "Edit", edit_group_path(@group), class: 'btn'
-      
-  .main_chat__massages
+      = link_to "Edit", edit_group_path(@group), class: 'main_chat__btn'
+   
+  .main_chat__contents   
     = render @messages
  
   .main_chat__form
     = form_for [@group, @message] do |f|
-      .main_chat__form__input_box
-        .main_chat__form__input_box__new_message
-          = f.text_field :text, class: 'main_chat__form__input_box', placeholder: 'Type a message'
-        .main_chat__form__input_box__image
-          %input#filename{:type => "file"}/
-          %label{:for => "filename"}
-            %span.image
-              %i.far.fa-image
-                %input#filename{:type => "file"}/
+      .main_chat__form__input_message
+        = f.text_field :text, class: 'main_chat__form__input_message', placeholder: 'type a message' 
+      .main_chat__form__input_image
+        = f.label :image, class: 'main_chat__form__input_image__view' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
       .main_chat__form__send_btn
         = f.submit 'Send', class: 'main_chat__form__send_btn'
+
+    
