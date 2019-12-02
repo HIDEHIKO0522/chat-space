@@ -1,9 +1,11 @@
-.main_chat__messages__message_tweeter
-  .main_chat__messages__message_tweeter__user_name
-    = message.user.name
-  .main_chat__messages__message_tweeter__created_date
-    = message.created_at.strftime("%Y/%m/%d %H:%M")
-.main_chat__messages__text
-  - if message.text.present?
-    = message.text
-    = image_tag message.image.url, class: 'main_chat__messages__text' if message.image.present? 
+.main_chat__contents__messages
+  .main_chat__contents__messages__info
+    .main_chat__contents__messages__info__user_name
+      = message.user.name
+    .main_chat__contents__messages__info__created_date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .main_chat_contents__messages__content 
+    - if message.text.present? 
+      .main_chat__contents__messages__content_text
+        = message.text
+        = image_tag message.image.url, class: 'chat_main_img' if message.image.present?
