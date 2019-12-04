@@ -1,9 +1,12 @@
 $(function(){
-      function buildHTML(message){
-        // 「もしメッセージに画像が含まれていたら」という条件式
-        if (message.image) {
-        // メッセージに画像が含まれる場合のHTMLを作る
-        var html = 
+      function buildHTML(message){{
+            if (message.image){
+              var img = `<img src= ${message.image} ,width="200px" height="100px">`
+            }else{
+              var img = ""
+            }  
+          }
+          var html = 
           `<div class="main_chat__contents__messages" data-message-id=${message.id}>
               <div class="main_chat__contents__messages__info">
                 <div class="main_chat__contents__messages__info__user_name">
@@ -13,36 +16,17 @@ $(function(){
                   ${message.date}
                 </div> 
               </div>   
-              <div class="main_chat_contents__messages__content"> 
-                <div class=main_chat__contents__messages__content_text">
-                  ${message.text}
-                </div>
-                <div class=main_chat__contents__messages__content_image"> 
-                  <img src=${message.image} >
-                </div>
-              </div>    
-          </div>`
-        } else {
-        // メッセージに画像が含まれない場合のHTMLを作る 
-          var html = 
-            `<div class="main_chat__contents__messages" data-message-id=${message.id}>
-                <div class="main_chat__contents__messages__info">
-                  <div class="main_chat__contents__messages__info__user_name">
-                    ${message.user_name}
-                  </div>  
-                  <div class="main_chat__contents__messages__info__created_date">
-                    ${message.date}
-                  </div> 
-                </div>   
-                <div class="main_chat_contents__messages__content"> 
-                  <div class=main_chat__contents__messages__content_text">
+              <div class="main_chat_contents__messages__content">                 
+                  <div class=main_chat__contents__messages__content_text">                  
                     ${message.text}
                   </div>
-                </div>    
-            </div>`
-        }
-        return html
-      }
+                  <div class=main_chat__contents__messages__content_image">
+                    ${img} 
+                  </div>
+              </div>    
+          </div>`      
+        return html;
+        }; 
   $("#new_message").on('submit', function(e){
     e.preventDefault()
     var formData = new FormData(this);
@@ -57,7 +41,6 @@ $(function(){
     })
     .done(function(data) {
       var html = buildHTML(data);
-
       $('.main_chat__contents').append(html);
       $('.main_chat__contents').animate({ scrollTop: $('.main_chat__contents')[0].scrollHeight});
       $('form')[0].reset();

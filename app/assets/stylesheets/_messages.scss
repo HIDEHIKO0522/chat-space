@@ -91,10 +91,6 @@
     font-weight: normal;
     text-decoration: none;   
   }
-  .img {
-    height: 100px;
-    width: 200px;
-  }
   &__btn{
     color: #38aef0;
     text-decoration: none;
@@ -110,10 +106,7 @@
       padding-right: 40px;
       display: flex;
       justify-content: space-between;
-      // position: fixed;
-      
-    
-        
+                  
       &__left_box {
         width: 200px;
         padding-top: 35px;
@@ -133,9 +126,7 @@
             font-size: 20px;
             font-weight: normal;
             text-decoration: none;   
-          }
-        
-        
+          }       
         }
 
         &__member_list {
@@ -202,15 +193,10 @@
             width: 100px;
 
             &__text {
-              // height:14px;
               color: #434A54;
               font-size: 14px;
               font-weight: normal;
               line-height: 14px;
-            } 
-            &__image {
-              height: 10%;
-              width: 20%;
             } 
           }
         }
@@ -268,6 +254,5 @@
           line-height: 50px;
           float: right;
         } 
-    }   
-    
+    }     
 }   
