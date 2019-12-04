@@ -91,10 +91,6 @@
     font-weight: normal;
     text-decoration: none;   
   }
-  .img {
-    height: 100px;
-    width: 200px;
-  }
   &__btn{
     color: #38aef0;
     text-decoration: none;
@@ -103,13 +99,14 @@
 
     &__main_header {
       height: 96px;
+      width: calc(100vw - 382px);
       background-color:#fff;
       border: solid 1px #eeeeee;
       padding-left: 40px;
       padding-right: 40px;
       display: flex;
       justify-content: space-between;
-        
+                  
       &__left_box {
         width: 200px;
         padding-top: 35px;
@@ -129,9 +126,7 @@
             font-size: 20px;
             font-weight: normal;
             text-decoration: none;   
-          }
-        
-        
+          }       
         }
 
         &__member_list {
@@ -160,7 +155,7 @@
     }  
 
     &__contents {
-      height: calc(100vh - 96px);
+      height: calc(100vh - 200px);
       background-color: #fafafa;
       padding-top: 46px;
       padding-left: 40px;
@@ -170,6 +165,7 @@
       &__messages {
         width: 200px;
         margin-bottom: 40px;
+ 
 
           &__info {
             height: 16px;
@@ -197,15 +193,10 @@
             width: 100px;
 
             &__text {
-              // height:14px;
               color: #434A54;
               font-size: 14px;
               font-weight: normal;
               line-height: 14px;
-            } 
-            &__image {
-              height: 100px;
-              width: 20px;
             } 
           }
         }
@@ -263,6 +254,5 @@
           line-height: 50px;
           float: right;
         } 
-    }   
-    
+    }     
 }   
