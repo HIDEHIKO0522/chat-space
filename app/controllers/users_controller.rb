@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
 
+  def index
+    # user.rbにてself.search(input,id)設定
+    @users = User.search(params[:keyword], current_user.id)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   def edit
   end
   
