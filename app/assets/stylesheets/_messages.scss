@@ -84,7 +84,13 @@
   float:right;
   position: relative;
   overflow: scroll; 
- 
+  
+  &__img {
+    height: 100px;
+    width: 200px;
+  }
+
+
   .p {
     color: #333333;
     font-size: 20px;
