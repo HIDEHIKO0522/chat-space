@@ -1,32 +1,32 @@
 $(function(){
       function buildHTML(message){{
-            if (message.image){
-              var img = `<img src= ${message.image} ,width="200px" height="100px">`
-            }else{
-              var img = ""
-            }  
-          }
-        var html = 
-          `<div class="main_chat__contents__messages" data-message-id= ` + message.id + `>` +
-              `<div class="main_chat__contents__messages__info">` +
-                 `<div class="main_chat__contents__messages__info__user_name">` +
-                   message.user_name +
-                 `</div>` + 
-                 `<div class="main_chat__contents__messages__info__created_date">` +
-                    message.date +
-                 `</div>` + 
-              `</div>` +  
-              `<div class="main_chat_contents__messages__content">` +                 
-                `<div class=main_chat__contents__messages__content_text">` +                 
-                   message.text +
-                 `</div>` + 
-                `<div class=main_chat__contents__messages__content_image">` +
-                  `${img}` + 
-                `</div>` +
-                `</div>` +  
-           `</div>`
-        return html;
-     }
+        if (message.image){
+          var img = `<img src= ${message.image} ,width="200px" height="100px">`
+        }else{
+          var img = ""
+        }  
+      }
+    var html = 
+      `<div class="main_chat__contents__messages" data-message-id= ` + message.id + `>` +
+          `<div class="main_chat__contents__messages__info">` +
+              `<div class="main_chat__contents__messages__info__user_name">` +
+                message.user_name +
+              `</div>` + 
+              `<div class="main_chat__contents__messages__info__created_date">` +
+                message.date +
+              `</div>` + 
+           `</div>` +  
+           `<div class="main_chat_contents__messages__content">` +                 
+              `<div class=main_chat__contents__messages__content_text">` +                 
+                message.text +
+              `</div>` + 
+              `<div class=main_chat__contents__messages__content_image">` +
+                `${img}` + 
+              `</div>` +
+            `</div>` +  
+        `</div>`
+    return html;
+  }
   $("#new_message").on('submit', function(e){
     e.preventDefault()
     var formData = new FormData(this);
@@ -55,14 +55,12 @@ $(function(){
   var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
       var last_message_id = $('.main_chat__contents__messages:last').data('message-id'); 
-       console.log(last_message_id); 
       $.ajax({ 
         url: "api/messages", 
         type: 'get',
         dataType: 'json', 
         data: {last_id: last_message_id} 
       })
-      // if(last_message_id.length != 0){
       .done(function (messages) { 
         var insertHTML = '';
         $.each(messages, function(i, message) {
@@ -71,11 +69,10 @@ $(function(){
         $('.main_chat__contents').append(insertHTML);
         $('.main_chat__contents').animate({ scrollTop: $('.main_chat__contents')[0].scrollHeight});
       })
-    // }else{
       .fail(function () {
         alert('自動更新に失敗しました');
       });     
-     }
+    }
   };
     setInterval(reloadMessages, 7000);
 });
