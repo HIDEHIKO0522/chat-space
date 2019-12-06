@@ -37,9 +37,20 @@ $(function(){
       data: formData, 
       dataType: 'json',
       processData: false,
-      contentType: false
-    })
-    .done(function(data) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+      .done(function(data) {
       var html = buildHTML(data);
       $('.main_chat__contents').append(html);
       $('.main_chat__contents').animate({ scrollTop: $('.main_chat__contents')[0].scrollHeight});
