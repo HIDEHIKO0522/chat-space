@@ -2,8 +2,8 @@
   .main_chat__main_header
     .main_chat__main_header__left_box
       .main_chat__main_header__left_box__group_name
-        = link_to group_messages_path(@group) do
-          %p= @group.name
+        = link_to group_messages_path(@group) ,class:"main_chat__main_header__left_box__group_name" do
+          = @group.name
       .main_chat__main_header__left_box__member_list
         Members: 
         - @group.users.each do |user|   
