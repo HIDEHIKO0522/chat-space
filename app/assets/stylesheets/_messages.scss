@@ -53,25 +53,25 @@
       overflow: scroll;
     
         &__group_box {
-          padding-top: 20px;
+          text-decoration: none;
+          padding-top: 10px;
           padding-bottom: 40px;
 
             &__name_box {
-              height: 15px;
+              height: 20px;
               width: 260px;
               color: #fff;
               font-size: 15px;
-              line-height: 15px;
+              line-height: 20px;
               margin-right: 20px; 
-              margin-bottom: 10px;
+              margin-bottom: 5px;
             }
             &__message_box {
-              height: 11px;
+              height: 18px;
               width: 260px;
               color: #fff;
               font-size: 11px;
-              line-height: 11px;
-              margin-bottom: 40px;
+              line-height: 18px;
             } 
         }  
     }  
@@ -90,13 +90,6 @@
     width: 200px;
   }
 
-
-  .p {
-    color: #333333;
-    font-size: 20px;
-    font-weight: normal;
-    text-decoration: none;   
-  }
   &__btn{
     color: #38aef0;
     text-decoration: none;
@@ -117,6 +110,7 @@
         width: 200px;
         padding-top: 35px;
         padding-bottom: 14px;
+        text-decoration: none;   
 
         &__group_name { 
           height: 20px;    
@@ -127,12 +121,6 @@
           margin-bottom: 15px;
           pointer-events: none;
           text-decoration: none;
-          .p {
-            color: #333333;
-            font-size: 20px;
-            font-weight: normal;
-            text-decoration: none;   
-          }       
         }
 
         &__member_list {
