@@ -9,4 +9,4 @@
       .main_chat__contents__messages__content_text
         = message.text
       .main_chat__contents__messages__content_image  
-        = image_tag message.image.url, class: 'chat_main_img' if message.image.present?
+        = image_tag message.image.url, width:'200' if message.image.present?
