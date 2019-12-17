@@ -53,7 +53,7 @@ $(function(){
   });
 
   var reloadMessages = function () {
-    if (window.location.href.match(/\/checks\/\d+/messages/)){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
       var last_message_id = $('.main_chat__contents__messages:last').data('message-id'); 
       $.ajax({ 
         url: "api/messages", 
