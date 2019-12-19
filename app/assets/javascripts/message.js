@@ -5,6 +5,7 @@ $(function(){
         }else{
           var img = ""
         }  
+        
       }
     var html = 
       `<div class="main_chat__contents__messages" data-message-id= ` + message.id + `>` +
